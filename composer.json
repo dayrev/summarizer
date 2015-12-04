@@ -1,0 +1,22 @@
+{
+    "name": "dayrev/summarizer",
+    "description": "Text summarizer.",
+    "keywords": ["summarizer", "summary", "php"],
+    "type": "library",
+    "homepage": "https://bitbucket.org/dayrev/summarizer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Sposito",
+            "email": "daniel.g.sposito@gmail.com",
+            "homepage": "https://github.com/dsposito"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "php-curl-class/php-curl-class": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {"Summarizer\\": "src/"}
+    }
+}
