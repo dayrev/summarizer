@@ -35,6 +35,6 @@ class Smmry extends Provider
 
         $response = $request->response;
 
-        return empty($response['sm_api_content']) ? $response['sm_api_content'] : $text;
+        return !empty($response->sm_api_content) ? $response->sm_api_content : $text;
     }
 }
