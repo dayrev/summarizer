@@ -29,7 +29,6 @@ class Smmry extends Provider
         ));
 
         $request = new Curl();
-        $request->setHeader('Expect:', '');
         $request->post($url, array(
             'sm_api_input' => $text,
         ));
