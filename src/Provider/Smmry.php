@@ -11,7 +11,7 @@ use Summarizer\Provider;
 class Smmry extends Provider
 {
     protected $api_key;
-    protected $sentences = 7;
+    protected $length = 7; // Sentences
 
     /**
      * Summarizes a given string of text.
@@ -25,7 +25,7 @@ class Smmry extends Provider
         $url  = 'http://api.smmry.com';
         $url .= '?' . http_build_query(array(
             'SM_API_KEY' => $this->api_key,
-            'SM_LENGTH' => $this->sentences,
+            'SM_LENGTH' => $this->length,
         ));
 
         $request = new Curl();
