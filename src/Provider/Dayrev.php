@@ -36,7 +36,7 @@ class Dayrev extends Provider
             $index += 1;
 
             if ($index == $this->length) {
-                return $paragraph;
+                return rtrim($paragraph);
             }
         }
     }
