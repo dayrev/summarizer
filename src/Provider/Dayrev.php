@@ -10,7 +10,7 @@ use Summarizer\Provider;
  *
  * @see https://github.com/aboustayyef/TextSummarizer
  */
-class Smmry extends Provider
+class Dayrev extends Provider
 {
     protected $sentences = [];
     public $length = 7; // Sentences
