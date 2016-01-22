@@ -51,7 +51,7 @@ class Dayrev extends Provider
     protected function extractSentences($text)
     {
         // Returns a collection of key phrases - split by punctuation delimiters into sentences.
-        $pattern =  '/(?<=[.?!;])\s*/';
+        $pattern =  '/(?<=[.?!;])[^0-9A-Za-z]+/';
         $sentences = preg_split($pattern, $text);
         foreach ($sentences as $key => $sentence) {
             array_push(
@@ -91,7 +91,7 @@ class Dayrev extends Provider
      */
     protected function removeWhitespace($text)
     {
-        return preg_replace("#\\s+#um",  ' ', $text);
+        return preg_replace("#\\s+#um", ' ', $text);
     }
 
     /**
