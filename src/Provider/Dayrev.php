@@ -1,9 +1,9 @@
 <?php
 
-namespace Summarizer\Provider;
+namespace DayRev\Summarizer\Provider;
 
+use DayRev\Summarizer\Provider;
 use Porter;
-use Summarizer\Provider;
 
 /**
  * Driver class that handles local summarization of text.
@@ -145,7 +145,7 @@ class Dayrev extends Provider
     /**
      * Gets the top scoring sentences.
      *
-     * @param bool $sorted Whether to sort the sentences by score. 
+     * @param bool $sorted Whether to sort the sentences by score.
      *
      * @return array
      */

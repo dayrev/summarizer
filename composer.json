@@ -17,6 +17,6 @@
         "camspiers/porter-stemmer": "^1.0"
     },
     "autoload": {
-        "psr-4": {"Summarizer\\": "src/"}
+        "psr-4": {"DayRev\\Summarizer\\": "src/"}
     }
 }

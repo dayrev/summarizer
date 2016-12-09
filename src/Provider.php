@@ -1,6 +1,6 @@
 <?php
 
-namespace Summarizer;
+namespace DayRev\Summarizer;
 
 /**
  * Adapter class that handles Summarizer provider interactions.
@@ -29,7 +29,7 @@ abstract class Provider
      * Initializes the class.
      *
      * @param array $data
-     * 
+     *
      * @return void
      */
     public function __construct(array $data = array())

@@ -1,9 +1,9 @@
 <?php
 
-namespace Summarizer\Provider;
+namespace DayRev\Summarizer\Provider;
 
 use Curl\Curl;
-use Summarizer\Provider;
+use DayRev\Summarizer\Provider;
 
 /**
  * Driver class that handles Smmry interactions.
