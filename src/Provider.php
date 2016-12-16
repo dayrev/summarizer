@@ -62,5 +62,5 @@ abstract class Provider
      *
      * @return string
      */
-    abstract public function summarize(string $text);
+    abstract public function summarize(string $text) : string;
 }

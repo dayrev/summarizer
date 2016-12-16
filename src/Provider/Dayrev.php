@@ -22,7 +22,7 @@ class Dayrev extends Provider
      *
      * @return string
      */
-    public function summarize(string $text)
+    public function summarize(string $text) : string
     {
         $text = strip_tags($text);
         $text = html_entity_decode($text, ENT_NOQUOTES);
@@ -89,7 +89,7 @@ class Dayrev extends Provider
      *
      * @return string
      */
-    protected function removeWhitespace(string $text)
+    protected function removeWhitespace(string $text) : string
     {
         return preg_replace("#\\s+#um", ' ', $text);
     }
@@ -101,7 +101,7 @@ class Dayrev extends Provider
      *
      * @return array
      */
-    protected function splitSentenceIntoWords(string $sentence)
+    protected function splitSentenceIntoWords(string $sentence) : array
     {
         $raw = preg_split('#\s+#', $sentence);
 
@@ -124,7 +124,7 @@ class Dayrev extends Provider
      *
      * @return float
      */
-    protected function compare(string $sentence1, string $sentence2)
+    protected function compare(string $sentence1, string $sentence2) : float
     {
         $words1 = $this->splitSentenceIntoWords(strtolower($sentence1));
         $words2 = $this->splitSentenceIntoWords(strtolower($sentence2));
@@ -134,7 +134,7 @@ class Dayrev extends Provider
 
         if ((count($words1) < 3) || (count($words2) < 3)) {
             // Ignore sentences that are too short.
-            return 0;
+            return 0.0;
         }
 
         $jaccard = count($union) / sqrt(count($combination));
@@ -149,7 +149,7 @@ class Dayrev extends Provider
      *
      * @return array
      */
-    protected function getTopScoringSentences(bool $sorted = true)
+    protected function getTopScoringSentences(bool $sorted = true) : array
     {
         $scored = [];
         foreach ($this->sentences as $key => $sentence) {
