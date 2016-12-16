@@ -15,7 +15,7 @@ abstract class Provider
      *
      * @return Provider|bool
      */
-    public static function instance($provider, $data = array())
+    public static function instance(string $provider, array $data = array())
     {
         $class = __NAMESPACE__ . '\\Provider\\' . ucfirst($provider);
         if (!class_exists($class)) {
@@ -62,5 +62,5 @@ abstract class Provider
      *
      * @return string
      */
-    abstract public function summarize($text);
+    abstract public function summarize(string $text);
 }

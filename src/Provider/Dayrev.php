@@ -22,7 +22,7 @@ class Dayrev extends Provider
      *
      * @return string
      */
-    public function summarize($text)
+    public function summarize(string $text)
     {
         $text = strip_tags($text);
         $text = html_entity_decode($text, ENT_NOQUOTES);
@@ -48,7 +48,7 @@ class Dayrev extends Provider
      *
      * @return void
      */
-    protected function extractSentences($text)
+    protected function extractSentences(string $text)
     {
         // Returns a collection of key phrases - split by punctuation delimiters into sentences.
         $pattern =  '/(?<=[.?!;])[^0-9A-Za-z]+/';
@@ -89,7 +89,7 @@ class Dayrev extends Provider
      *
      * @return string
      */
-    protected function removeWhitespace($text)
+    protected function removeWhitespace(string $text)
     {
         return preg_replace("#\\s+#um", ' ', $text);
     }
@@ -101,7 +101,7 @@ class Dayrev extends Provider
      *
      * @return array
      */
-    protected function splitSentenceIntoWords($sentence)
+    protected function splitSentenceIntoWords(string $sentence)
     {
         $raw = preg_split('#\s+#', $sentence);
 
@@ -124,7 +124,7 @@ class Dayrev extends Provider
      *
      * @return float
      */
-    protected function compare($sentence1, $sentence2)
+    protected function compare(string $sentence1, string $sentence2)
     {
         $words1 = $this->splitSentenceIntoWords(strtolower($sentence1));
         $words2 = $this->splitSentenceIntoWords(strtolower($sentence2));
@@ -149,7 +149,7 @@ class Dayrev extends Provider
      *
      * @return array
      */
-    protected function getTopScoringSentences($sorted = true)
+    protected function getTopScoringSentences(bool $sorted = true)
     {
         $scored = [];
         foreach ($this->sentences as $key => $sentence) {

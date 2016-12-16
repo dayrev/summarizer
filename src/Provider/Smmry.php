@@ -20,7 +20,7 @@ class Smmry extends Provider
      *
      * @return string
      */
-    public function summarize($text)
+    public function summarize(string $text)
     {
         $url  = 'http://api.smmry.com';
         $url .= '?' . http_build_query(array(
