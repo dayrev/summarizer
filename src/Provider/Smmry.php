@@ -3,6 +3,7 @@
 namespace DayRev\Summarizer\Provider;
 
 use Curl\Curl;
+use DayRev\Summarizer\Content;
 use DayRev\Summarizer\Provider;
 
 /**
@@ -18,9 +19,9 @@ class Smmry extends Provider
      *
      * @param string $text The text to summarize.
      *
-     * @return string
+     * @return Content
      */
-    public function summarize(string $text) : string
+    public function summarize(string $text) : Content
     {
         $url  = 'http://api.smmry.com';
         $url .= '?' . http_build_query(array(
@@ -35,6 +36,9 @@ class Smmry extends Provider
 
         $response = $request->response;
 
-        return !empty($response->sm_api_content) ? $response->sm_api_content : $text;
+        $content = new Content();
+        $content->text = !empty($response->sm_api_content) ? $response->sm_api_content : $text;
+
+        return $content;
     }
 }

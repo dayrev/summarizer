@@ -2,6 +2,7 @@
 
 namespace DayRev\Summarizer\Provider;
 
+use DayRev\Summarizer\Content;
 use DayRev\Summarizer\Provider;
 use Porter;
 
@@ -20,9 +21,9 @@ class Dayrev extends Provider
      *
      * @param string $text The text to summarize.
      *
-     * @return string
+     * @return Content
      */
-    public function summarize(string $text) : string
+    public function summarize(string $text) : Content
     {
         $text = strip_tags($text);
         $text = html_entity_decode($text, ENT_NOQUOTES);
@@ -36,7 +37,10 @@ class Dayrev extends Provider
             $index += 1;
 
             if ($index == $this->length) {
-                return rtrim($paragraph);
+                $content = new Content();
+                $content->text = rtrim($paragraph);
+
+                return $content;
             }
         }
     }
