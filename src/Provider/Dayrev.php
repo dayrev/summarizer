@@ -23,7 +23,7 @@ class Dayrev extends Provider
      *
      * @return Content
      */
-    public function summarize(string $text) : Content
+    public function summarize(string $text): Content
     {
         $text = strip_tags($text);
         $text = html_entity_decode($text, ENT_NOQUOTES);
@@ -93,7 +93,7 @@ class Dayrev extends Provider
      *
      * @return string
      */
-    protected function removeWhitespace(string $text) : string
+    protected function removeWhitespace(string $text): string
     {
         return preg_replace("#\\s+#um", ' ', $text);
     }
@@ -105,7 +105,7 @@ class Dayrev extends Provider
      *
      * @return array
      */
-    protected function splitSentenceIntoWords(string $sentence) : array
+    protected function splitSentenceIntoWords(string $sentence): array
     {
         $raw = preg_split('#\s+#', $sentence);
 
@@ -128,7 +128,7 @@ class Dayrev extends Provider
      *
      * @return float
      */
-    protected function compare(string $sentence1, string $sentence2) : float
+    protected function compare(string $sentence1, string $sentence2): float
     {
         $words1 = $this->splitSentenceIntoWords(strtolower($sentence1));
         $words2 = $this->splitSentenceIntoWords(strtolower($sentence2));
@@ -153,7 +153,7 @@ class Dayrev extends Provider
      *
      * @return array
      */
-    protected function getTopScoringSentences(bool $sorted = true) : array
+    protected function getTopScoringSentences(bool $sorted = true): array
     {
         $scored = [];
         foreach ($this->sentences as $key => $sentence) {

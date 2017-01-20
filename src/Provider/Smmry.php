@@ -21,7 +21,7 @@ class Smmry extends Provider
      *
      * @return Content
      */
-    public function summarize(string $text) : Content
+    public function summarize(string $text): Content
     {
         $url  = 'http://api.smmry.com';
         $url .= '?' . http_build_query(array(
