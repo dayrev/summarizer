@@ -2,7 +2,7 @@
 
 namespace DayRev\Summarizer\Provider;
 
-use Curl\Curl;
+use DayRev\Smmry\SDK as SmmrySDK;
 use DayRev\Summarizer\Content;
 use DayRev\Summarizer\Provider;
 
@@ -12,7 +12,21 @@ use DayRev\Summarizer\Provider;
 class Smmry extends Provider
 {
     protected $api_key;
-    protected $length = 7; // Sentences
+    protected $summarizer;
+
+    /**
+     * Initializes the class.
+     *
+     * @param array $data Key value data to populate object properties.
+     *
+     * @return void
+     */
+    public function __construct(array $data = array())
+    {
+        parent::__construct($data);
+
+        $this->summarizer = new SmmrySDK($data);
+    }
 
     /**
      * Summarizes a given string of text.
@@ -23,21 +37,10 @@ class Smmry extends Provider
      */
     public function summarize(string $text): Content
     {
-        $url  = 'http://api.smmry.com';
-        $url .= '?' . http_build_query(array(
-            'SM_API_KEY' => $this->api_key,
-            'SM_LENGTH' => $this->length,
-        ));
-
-        $request = new Curl();
-        $request->post($url, array(
-            'sm_api_input' => $text,
-        ));
-
-        $response = $request->response;
+        $response = $this->summarizer->summarizeText($text);
 
         $content = new Content();
-        $content->text = !empty($response->sm_api_content) ? $response->sm_api_content : $text;
+        $content->text = !empty($response->sm_api_content) ? trim($response->sm_api_content) : $text;
 
         return $content;
     }
