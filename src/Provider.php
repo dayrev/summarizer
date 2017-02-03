@@ -34,9 +34,7 @@ abstract class Provider
      */
     public function __construct(array $data = array())
     {
-        if (!empty($data)) {
-            $this->loadData($data);
-        }
+        $this->loadData($data);
     }
 
     /**
@@ -46,7 +44,7 @@ abstract class Provider
      *
      * @return void
      */
-    public function loadData(array $data = array())
+    protected function loadData(array $data = array())
     {
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {
