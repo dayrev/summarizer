@@ -4,6 +4,7 @@ Summarizer provides an elegant interface to summarize text using a variety of th
 
 **Supported Providers:**
 
+ * DayRev (local)
  * Smmry
 
 ##Usage
