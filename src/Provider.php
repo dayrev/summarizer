@@ -8,6 +8,13 @@ namespace DayRev\Summarizer;
 abstract class Provider
 {
     /**
+     * The max length of the summarized text (in sentences).
+     *
+     * @var int
+     */
+    protected $summary_length = 7;
+
+    /**
      * Gets an instance of the given provider.
      *
      * @param string $provider The name of the provider to instantiate.

@@ -14,7 +14,6 @@ use Porter;
 class Dayrev extends Provider
 {
     protected $sentences = [];
-    public $length = 7; // Sentences
 
     /**
      * Summarizes a given string of text.
@@ -36,7 +35,7 @@ class Dayrev extends Provider
             $paragraph .= $sentence . ' ';
             $index += 1;
 
-            if ($index == $this->length) {
+            if ($index == $this->summary_length) {
                 $content = new Content();
                 $content->text = rtrim($paragraph);
 
@@ -163,7 +162,7 @@ class Dayrev extends Provider
         // Sort phrases by strength.
         asort($scored);
         $scored = array_reverse($scored);
-        $topscoring = array_slice($scored, 0, $this->length);
+        $topscoring = array_slice($scored, 0, $this->summary_length);
 
         // Sort phrases by order of occurrence.
         $inorder = [];
