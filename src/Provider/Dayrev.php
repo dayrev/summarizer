@@ -29,19 +29,10 @@ class Dayrev extends Provider
         $this->extractSentences($text);
         $this->scoreSentences();
 
-        $summary = '';
-        $index = 0;
-        foreach ($this->getTopScoringSentences() as $sentence => $value) {
-            $summary .= $sentence . ' ';
-            $index += 1;
+        $content = new Content();
+        $content->text = implode(' ', $this->getTopScoringSentences());
 
-            if ($index == $this->summary_length) {
-                $content = new Content();
-                $content->text = rtrim($summary);
-
-                return $content;
-            }
-        }
+        return $content;
     }
 
     /**
