@@ -22,7 +22,7 @@ abstract class Provider
      *
      * @return Provider|bool
      */
-    public static function instance(string $provider, array $data = array())
+    public static function instance(string $provider, array $data = [])
     {
         $class = __NAMESPACE__ . '\\Provider\\' . ucfirst($provider);
         if (!class_exists($class)) {
@@ -39,7 +39,7 @@ abstract class Provider
      *
      * @return void
      */
-    public function __construct(array $data = array())
+    public function __construct(array $data = [])
     {
         $this->loadData($data);
     }
@@ -51,7 +51,7 @@ abstract class Provider
      *
      * @return void
      */
-    protected function loadData(array $data = array())
+    protected function loadData(array $data = [])
     {
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {

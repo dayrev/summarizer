@@ -29,7 +29,7 @@ class ProviderTest extends \PHPUnit_Framework_TestCase
 
     public function testProviderMetaDataIsSet()
     {
-        $provider = Provider::instance('dayrev', array('summary_length' => 6));
+        $provider = Provider::instance('dayrev', ['summary_length' => 6]);
 
         $this->assertObjectHasAttribute('summary_length', $provider);
         $this->assertAttributeEquals(6, 'summary_length', $provider);

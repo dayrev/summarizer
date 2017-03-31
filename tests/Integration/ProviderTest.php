@@ -9,7 +9,7 @@ class ProviderTest extends TestCase
 {
     public function testDayrevSummarizesExpectedContent()
     {
-        $provider = Provider::instance('dayrev', array('summary_length' => 4));
+        $provider = Provider::instance('dayrev', ['summary_length' => 4]);
         $content = $provider->summarize($this->getTextToSummarize());
 
         $this->assertInstanceOf(Content::class, $content);
@@ -20,7 +20,7 @@ class ProviderTest extends TestCase
     {
         $provider = Provider::instance(
             'smmry',
-            array('api_key' => $this->config['smmry_api_key'], 'summary_length' => 4)
+            ['api_key' => $this->config['smmry_api_key'], 'summary_length' => 4]
         );
         $content = $provider->summarize($this->getTextToSummarize());
 

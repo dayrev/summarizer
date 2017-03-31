@@ -50,7 +50,7 @@ class Dayrev extends Provider
         foreach ($sentences as $key => $sentence) {
             array_push(
                 $this->sentences,
-                array('sentence' => trim($this->removeWhitespace($sentence)), 'order' => $key, 'score' => 0)
+                ['sentence' => trim($this->removeWhitespace($sentence)), 'order' => $key, 'score' => 0]
             );
         }
     }

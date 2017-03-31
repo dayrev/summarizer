@@ -9,7 +9,7 @@ Summarizer provides an elegant interface to summarize text using a variety of th
 
 ##Usage
 
-    $summarizer = DayRev\Summarizer\Provider::instance('smmry', array('api_key' => 'YOURKEYHERE'));
+    $summarizer = DayRev\Summarizer\Provider::instance('smmry', ['api_key' => 'YOURKEYHERE']);
     $content = $summarizer->summarize($text);
 
 ## Tests
