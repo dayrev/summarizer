@@ -24,20 +24,20 @@ class Dayrev extends Provider
      */
     public function summarize(string $text): Content
     {
-        $text = strip_tags($text);
-        $text = html_entity_decode($text, ENT_NOQUOTES);
+        $text = html_entity_decode(strip_tags($text), ENT_NOQUOTES);
+
         $this->extractSentences($text);
         $this->scoreSentences();
 
-        $paragraph = '';
+        $summary = '';
         $index = 0;
         foreach ($this->getTopScoringSentences() as $sentence => $value) {
-            $paragraph .= $sentence . ' ';
+            $summary .= $sentence . ' ';
             $index += 1;
 
             if ($index == $this->summary_length) {
                 $content = new Content();
-                $content->text = rtrim($paragraph);
+                $content->text = rtrim($summary);
 
                 return $content;
             }
