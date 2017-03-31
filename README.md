@@ -1,4 +1,7 @@
 # Summarizer
+[![Build Status](https://travis-ci.org/dayrev/summarizer.svg?branch=master)](https://travis-ci.org/dayrev/summarizer)
+[![Coverage Status](https://coveralls.io/repos/github/dayrev/summarizer/badge.svg?branch=master)](https://coveralls.io/github/dayrev/summarizer?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/dayrev/summarizer/v/stable.png)](https://packagist.org/packages/dayrev/summarizer)
 
 ## Overview
 
