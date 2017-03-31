@@ -12,7 +12,7 @@ class ProviderTest extends TestCase
         $provider = Provider::instance('dayrev', array('summary_length' => 4));
         $content = $provider->summarize($this->getTextToSummarize());
 
-        $this->assertInstanceOf('DayRev\Summarizer\Content', $content);
+        $this->assertInstanceOf(Content::class, $content);
         $this->assertEquals($this->getExpectedDayrevSummary()->text, $content->text);
     }
 
@@ -24,7 +24,7 @@ class ProviderTest extends TestCase
         );
         $content = $provider->summarize($this->getTextToSummarize());
 
-        $this->assertInstanceOf('DayRev\Summarizer\Content', $content);
+        $this->assertInstanceOf(Content::class, $content);
         $this->assertEquals($this->getExpectedSmmrySummary()->text, $content->text);
     }
 
