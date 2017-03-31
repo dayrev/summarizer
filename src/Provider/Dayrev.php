@@ -148,39 +148,33 @@ class Dayrev extends Provider
     /**
      * Gets the top scoring sentences.
      *
-     * @param bool $sorted Whether to sort the sentences by score.
-     *
      * @return array
      */
-    protected function getTopScoringSentences(bool $sorted = true): array
+    protected function getTopScoringSentences(): array
     {
         $scored = [];
         foreach ($this->sentences as $key => $sentence) {
             $scored[$sentence['sentence']] = $sentence['score'];
         }
 
-        // Sort phrases by strength.
+        // Sort sentences by strength.
         asort($scored);
         $scored = array_reverse($scored);
         $topscoring = array_slice($scored, 0, $this->summary_length);
 
-        // Sort phrases by order of occurrence.
-        $inorder = [];
+        // Sort sentences by order of occurrence.
+        $ordered = [];
         foreach ($topscoring as $phrase => $score) {
             foreach ($this->sentences as $key => $sentence) {
                 if ($phrase == $sentence['sentence']) {
-                    $inorder[$phrase] = $sentence['order'];
+                    $ordered[$phrase] = $sentence['order'];
                     continue;
                 }
             }
         }
 
-        asort($inorder);
-        $topscored_sorted = $inorder;
-        if ($sorted) {
-            return $topscored_sorted;
-        } else {
-            return $topscoring;
-        }
+        asort($ordered);
+
+        return array_keys($ordered);
     }
 }
