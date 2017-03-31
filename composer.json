@@ -13,7 +13,6 @@
     ],
     "require": {
         "php": "^7.0",
-        "php-curl-class/php-curl-class": "^7.1",
         "camspiers/porter-stemmer": "^1.0",
         "dayrev/smmry-sdk-php": "^1.0"
     },

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ceb2a738b2f760a09a4f637838db34c4",
+    "content-hash": "13943809eade0cd669c95a97ad7fb3c4",
     "packages": [
         {
             "name": "camspiers/porter-stemmer",
