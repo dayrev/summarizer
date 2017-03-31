@@ -1,21 +1,35 @@
+# Summarizer
+
 ## Overview
 
-Summarizer provides an elegant interface to summarize text using a variety of third-party tools and services.
+Summarizer provides an elegant interface to summarize text using a variety of third-party providers.
 
 **Supported Providers:**
 
  * DayRev (local)
- * Smmry
+ * [Smmry](https://github.com/dayrev/smmry-sdk-php)
+
+## Installation
+Run the following [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) command to add the package to your project:
+
+```
+composer require dayrev/summarizer
+```
+
+Alternatively, add `"dayrev/summarizer": "^1.0"` to your composer.json file.
 
 ##Usage
-
-    $summarizer = DayRev\Summarizer\Provider::instance('smmry', ['api_key' => 'YOURKEYHERE']);
-    $content = $summarizer->summarize($text);
+```php
+$summarizer = DayRev\Summarizer\Provider::instance('smmry', ['api_key' => 'YOURKEYHERE']);
+$content = $summarizer->summarize($text);
+```
 
 ## Tests
-To run the test suite, install [composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx) and then run the following commands from the root directory:
+To run the test suite, run the following commands from the root directory:
 
 ```
 composer install
-vendor/bin/phpunit
+vendor/bin/phpunit -d smmry_api_key=YOUR_SMMRY_API_KEY
 ```
+
+> **Note:** A valid Smmry API key is required when running the integration tests.
