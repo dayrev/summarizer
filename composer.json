@@ -2,7 +2,7 @@
     "name": "dayrev/summarizer",
     "type": "library",
     "description": "Text summarizer.",
-    "keywords": ["summarizer", "summary", "php"],
+    "keywords": ["summarizer", "summarization", "summary", "php", "smmry"],
     "homepage": "https://bitbucket.org/dayrev/summarizer",
     "license": "MIT",
     "authors": [
