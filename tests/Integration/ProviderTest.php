@@ -28,10 +28,15 @@ class ProviderTest extends TestCase
         $this->assertEquals($this->getExpectedSmmrySummary()->text, $content->text);
     }
 
+    protected function getDataFileContents(string $filename): string
+    {
+        return file_get_contents(__DIR__ . '/../Data/' . $filename);
+    }
+
     protected function getExpectedDayrevSummary(): Content
     {
         $summary = new Content();
-        $summary->text = file_get_contents(__DIR__ . '/../Data/summarized-text-dayrev.txt');
+        $summary->text = $this->getDataFileContents('text-summary-dayrev.txt');
 
         return $summary;
     }
@@ -39,13 +44,13 @@ class ProviderTest extends TestCase
     protected function getExpectedSmmrySummary(): Content
     {
         $summary = new Content();
-        $summary->text = file_get_contents(__DIR__ . '/../Data/summarized-text-smmry.txt');
+        $summary->text = $this->getDataFileContents('text-summary-smmry.txt');;
 
         return $summary;
     }
 
     protected function getTextToSummarize(): string
     {
-        return file_get_contents(__DIR__ . '/../Data/full-text.txt');
+        return $this->getDataFileContents('text-extract.txt');
     }
 }
