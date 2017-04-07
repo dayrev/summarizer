@@ -44,7 +44,7 @@ class ProviderTest extends TestCase
     protected function getExpectedSmmrySummary(): Content
     {
         $summary = new Content();
-        $summary->text = $this->getDataFileContents('text-summary-smmry.txt');;
+        $summary->text = $this->getDataFileContents('text-summary-smmry.txt');
 
         return $summary;
     }
