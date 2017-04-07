@@ -1,10 +1,10 @@
 {
     "name": "dayrev/summarizer",
     "type": "library",
-    "description": "Text summarizer.",
+    "description": "Text Summarizer",
     "keywords": ["summarizer", "summarization", "summary", "php", "smmry"],
     "homepage": "https://github.com/dayrev/summarizer",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Daniel Sposito",
