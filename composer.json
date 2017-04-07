@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Text summarizer.",
     "keywords": ["summarizer", "summarization", "summary", "php", "smmry"],
-    "homepage": "https://github.org/dayrev/summarizer",
+    "homepage": "https://github.com/dayrev/summarizer",
     "license": "MIT",
     "authors": [
         {
