@@ -21,7 +21,7 @@ composer require dayrev/summarizer
 
 Alternatively, add `"dayrev/summarizer": "^1.0"` to your composer.json file.
 
-##Usage
+## Usage
 ```php
 $summarizer = DayRev\Summarizer\Provider::instance('smmry', ['api_key' => 'YOURKEYHERE']);
 $content = $summarizer->summarize($text);
